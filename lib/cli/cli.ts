@@ -49,6 +49,9 @@ const argv = yargs(process.argv.slice(2))
         description:
             'Name resolver for content type snippet names. Available options are: camelCase, pascalCase, snakeCase'
     })
+    .option('optionalElements', {
+        description: 'Indicates if the model generator should mark `Not Required` elements as optional'
+    })
     .option('taxonomyTypeFileResolver', {
         description: 'Name resolver for taxonomy filenames. Available options are: camelCase, pascalCase, snakeCase'
     })
@@ -84,6 +87,7 @@ const run = async () => {
     const addTimestamp = resolvedArgs.addTimestamp;
     const addEnvironmentInfo = resolvedArgs.addEnvironmentInfo;
     const elementResolver = resolvedArgs.elementResolver;
+    const optionalElements = !resolvedArgs.optionalElements ? false : resolvedArgs.optionalElements === 'true';
     const contentTypeFileResolver = resolvedArgs.contentTypeFileResolver;
     const contentTypeSnippetFileResolver = resolvedArgs.contentTypeSnippetFileResolver;
     const taxonomyTypeFileResolver = resolvedArgs.taxonomyTypeFileResolver;
@@ -111,6 +115,7 @@ const run = async () => {
         environmentId: environmentId,
         managementApiUrl: resolvedArgs.managementApiUrl,
         apiKey: apiKey,
+        optionalElements: optionalElements,
         outputDir: outputDir,
         isEnterpriseSubscription: isEnterpriseSubscription,
         addTimestamp: addTimestamp === 'true' ? true : false,

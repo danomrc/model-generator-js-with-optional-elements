@@ -53,6 +53,7 @@ export interface IGenerateModelsConfig {
     taxonomyTypeFileResolver?: TaxonomyTypeFileNameResolver;
     contentTypeResolver?: ContentTypeResolver;
     contentTypeSnippetResolver?: ContentTypeSnippetResolver;
+    optionalElements?: boolean;
     taxonomyTypeResolver?: TaxonomyTypeResolver;
     elementResolver?: ElementResolver;
     formatOptions?: Options;
