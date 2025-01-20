@@ -14,6 +14,7 @@ export declare class DeliveryContentTypeGenerator {
         addTimestamp: boolean;
         addEnvironmentInfo: boolean;
         elementResolver?: ElementResolver;
+        optionalElements?: boolean;
         contentTypeFileNameResolver?: ContentTypeFileNameResolver;
         contentTypeSnippetFileNameResolver?: ContentTypeSnippetFileNameResolver;
         contentTypeResolver?: ContentTypeResolver;

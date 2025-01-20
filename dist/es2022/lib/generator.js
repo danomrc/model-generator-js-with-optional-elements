@@ -108,6 +108,7 @@ export async function generateModelsAsync(config) {
                 addTimestamp: config.addTimestamp,
                 addEnvironmentInfo: config.addEnvironmentInfo,
                 elementResolver: config.elementResolver,
+                optionalElements: config.optionalElements,
                 contentTypeFileNameResolver: config.contentTypeFileResolver,
                 contentTypeResolver: config.contentTypeResolver,
                 taxonomyFileResolver: config.taxonomyTypeFileResolver,
